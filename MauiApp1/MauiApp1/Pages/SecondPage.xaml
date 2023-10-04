@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SecondPage"
+             Background="Transparent"
+             Title="SecondPage">
+    <VerticalStackLayout>
+        <Rectangle
+            x:Name="FaderRect"
+            Fill="#000000"
+            Opacity="0.25" />
+    </VerticalStackLayout>
+</ContentPage>

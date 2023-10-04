@@ -1,0 +1,23 @@
+﻿@page "/"
+@using MauiApp1.Platforms.MacCatalyst
+@inject ITransparentWindowService TransparentWindowService
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<button @onclick="OpenSecondWindow" style="margin-top: 8px;">Open Second Window</button>
+<button @onclick="MakeTransparent" style="margin-top: 8px;margin-bottom:8px;">Make Transparent</button>
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+    private void OpenSecondWindow()
+    {
+        Application.Current.OpenWindow(new Window(new SecondPage()));
+    }
+
+    private void MakeTransparent()
+    {
+        TransparentWindowService.MakeWindowsTransparent();
+    }
+}
