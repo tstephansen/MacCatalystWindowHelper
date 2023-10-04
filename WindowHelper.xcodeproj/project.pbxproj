@@ -6,8 +6,15 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		223E74322ACDD35D008D3685 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E74312ACDD35D008D3685 /* Functions.swift */; };
+		223E74352ACDD47B008D3685 /* Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 223E74342ACDD47B008D3685 /* Dynamic */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		223E74292ACDD33A008D3685 /* libWindowHelper.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libWindowHelper.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		223E74302ACDD35C008D3685 /* WindowHelper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WindowHelper-Bridging-Header.h"; sourceTree = "<group>"; };
+		223E74312ACDD35D008D3685 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +22,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223E74352ACDD47B008D3685 /* Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -24,7 +32,9 @@
 		223E74202ACDD33A008D3685 = {
 			isa = PBXGroup;
 			children = (
+				223E74312ACDD35D008D3685 /* Functions.swift */,
 				223E742A2ACDD33A008D3685 /* Products */,
+				223E74302ACDD35C008D3685 /* WindowHelper-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +72,9 @@
 			dependencies = (
 			);
 			name = WindowHelper;
+			packageProductDependencies = (
+				223E74342ACDD47B008D3685 /* Dynamic */,
+			);
 			productName = WindowHelper;
 			productReference = 223E74292ACDD33A008D3685 /* libWindowHelper.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -77,6 +90,7 @@
 				TargetAttributes = {
 					223E74282ACDD33A008D3685 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -89,6 +103,9 @@
 				Base,
 			);
 			mainGroup = 223E74202ACDD33A008D3685;
+			packageReferences = (
+				223E74332ACDD47B008D3685 /* XCRemoteSwiftPackageReference "Dynamic" */,
+			);
 			productRefGroup = 223E742A2ACDD33A008D3685 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -103,6 +120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223E74322ACDD35D008D3685 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +183,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -227,6 +245,11 @@
 		223E742E2ACDD33A008D3685 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ULX2E2Z2MT;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -234,12 +257,20 @@
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WindowHelper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		223E742F2ACDD33A008D3685 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ULX2E2Z2MT;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -247,6 +278,8 @@
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WindowHelper-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -272,6 +305,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		223E74332ACDD47B008D3685 /* XCRemoteSwiftPackageReference "Dynamic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mhdhejazi/Dynamic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		223E74342ACDD47B008D3685 /* Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223E74332ACDD47B008D3685 /* XCRemoteSwiftPackageReference "Dynamic" */;
+			productName = Dynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 223E74212ACDD33A008D3685 /* Project object */;
 }
