@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a library meant to be used in dotnet MAUI apps that run on macOS.
+This is a library meant to be used in dotnet MAUI apps that run on macOS. The purpose of this library is to make maui windows transparent.
 
 ## Usage
 
@@ -57,3 +57,7 @@ To use this library:
    ```
 
 4. Inject the service where needed and call the MakeWindowsTransparent() method to make the app's windows transparent.
+
+## Please note!
+
+I'm relatively unfamiliar with Swift and XCode. I primarily work in C#/WPF. Currently, I'm developing a proof-of-concept for a Maui app to transition one of our apps to be cross-platform. If you know a better way to do this or spot any mistakes, please raise an issue!
